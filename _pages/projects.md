@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of your cool projects.
+description: Active research lines. Check every project page for info about possible theses.
 nav: true
 display_categories: [work, fun]
 horizontal: false
@@ -17,7 +17,7 @@ horizontal: false
       <!-- Generate cards for each project -->
       {% if page.horizontal %}
         <div class="container">
-          <div class="row row-cols-2">
+          <div class="row row-cols-6">
           {% for project in sorted_projects %}
             {% include projects_horizontal.html %}
           {% endfor %}
@@ -38,7 +38,7 @@ horizontal: false
     <!-- Generate cards for each project -->
     {% if page.horizontal %}
       <div class="container">
-        <div class="row row-cols-2">
+        <div class="row row-cols-4">
         {% for project in sorted_projects %}
           {% include projects_hrz.html %}
         {% endfor %}
