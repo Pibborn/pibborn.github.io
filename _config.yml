@@ -114,7 +114,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Mattia Cerrato - blog  # your blog must have a name for it to show up in the nav bar
+blog_name: # your blog must have a name for it to show up in the nav bar
 blog_description: Just some blogging ideas.
 permalink: /blog/:year/:title/
 
@@ -138,6 +138,9 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  teaching:
+    output: true
+    permalink: /classes/:path/
 
 news_scrollable: true # adds a vertical scroll bar if there are more than 3 news items
 news_limit: 5 # leave blank to include all the news in the `_news` folder
@@ -225,8 +228,8 @@ display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will
 
 scholar:
 
-  last_name: [Einstein]
-  first_name: [Albert, A.]
+  last_name: Cerrato
+  first_name: [Mattia]
 
   style: apa
   locale: en

@@ -2,11 +2,19 @@
 layout: page
 permalink: /teaching/
 title: teaching
-description: Materials for courses you taught. Replace this text with your description.
+description: Materials for classes.
 nav: true
 nav_order: 5
 ---
 
-For now, this page is assumed to be a static description of your courses. You can convert it to a collection similar to `_projects/` so that you can have a dedicated page for each course.
+## Fall Semester 2022-23
 
-Organize your courses by years, topics, or universities, however you like!
+* [Trustworthy AI: Fairness, Interpretability and Privacy]({{site.baseurl}}/trust-class)
+
+<hr>
+
+## Summer Semester 2021-22
+
+* Machine Learning (tutorials)
+* Data Mining Praktikum
+* Data Mining Seminar
