@@ -1,8 +1,7 @@
 ---
 layout: post
-date: 2016-01-15 07:59:00-0400
+date: 2023-06-23 15:59:00-0400
 inline: true
-related_posts: false
 ---
 
-A simple inline announcement with Markdown emoji! :sparkles: :smile:
+Our preprint "Fair Interpretable Representation Learning with Correction Vectors" has been featured by the Montreal AI Ethics Institute. Read our summary [here](https://montrealethics.ai/fair-interpretable-representation-learning-with-correction-vectors/).
