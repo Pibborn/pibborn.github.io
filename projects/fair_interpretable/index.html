@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<title>Mattia  Cerrato | blank</title>
+<title>Mattia  Cerrato | Fair & Interpretable Representation Learning</title>
 <meta name="description" content="Post-Doc at JGU Mainz
 ">
 
@@ -31,7 +31,7 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
-<link rel="canonical" href="/blog/">
+<link rel="canonical" href="/projects/fair_interpretable/">
 
 <!-- JQuery -->
 <!-- jQuery -->
@@ -96,10 +96,6 @@
           </li>
           
           <!-- Other pages -->
-          
-          
-          
-          
           
           
           
@@ -179,56 +175,67 @@
     <div class="container mt-5">
       <div class="post">
 
-  <div class="header-bar">
-    <h1></h1>
-    <h2>Just some blogging ideas.</h2>
-  </div>
+  <header class="post-header">
+    <h1 class="post-title">Fair & Interpretable Representation Learning</h1>
+    <p class="post-description">Understandable neural networks for fair representation learning.</p>
+  </header>
 
+  <article>
+    <p>Representation learning algorithms based on neural networks are being employed extensively in information retrieval and data mining applications.
+The social impact of what the general public refers to as “AI” is now a topic of much discussion, with regulators in the EU even putting forward legal proposals which would require practitioners to “[…] minimise the risk of unfair biases embedded in the model […]”.</p>
 
-  <ul class="post-list">
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/github-metadata/">a post with github metadata</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>a quick run down on accessing github metadata.</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2020/twitter/">a post with twitter</a></h3>
-        <p class="post-meta">September 28, 2020</p>
-        <p>an example of a blog post with twitter</p>
-      </li>
-    
-      <li>
-        <h3><a class="post-title" href="/blog/2018/distill/">a distill-style blog post</a></h3>
-        <p class="post-meta">December 22, 2018</p>
-        <p>an example of a distill-style blog post and main elements</p>
-      </li>
-    
-  </ul>
+<p>The concern is that <strong>models trained on biased data might then learn those biases</strong>, therefore perpetuating historical discrimination against certain groups of individuals.</p>
 
-  
-<nav aria-label="Blog page naviation">
-  <ul class="pagination pagination-lg justify-content-center">
-    <li class="page-item disabled">
-      <a class="page-link" href="" tabindex="-1" aria-disabled="">Newer</a>
-    </li>
-    
-      
-        <li class="page-item active"><a class="page-link" href="/blog/index.html" title="blank">1</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/2/index.html" title="blank - page 2">2</a></li>
-      
-        <li class="page-item "><a class="page-link" href="/blog/page/3/index.html" title="blank - page 3">3</a></li>
-      
-    
-    <li class="page-item ">
-      <a class="page-link" href="/blog/page/2/">Older</a>
-    </li>
-  </ul>
-</nav>
+<div class="row">
+    <div class="col-sm mt-6 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/doctor.png" alt="" title="example image" />
+    </div>
+    <div class="col-sm mt-6 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="/assets/img/scores.svg" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    Left: a translation model displays a gender bias. Translating English to Turkish and back shows how, when information is not sufficient, some inductive bias is needed to complete a translation task. When in doubt, the model performs the "most likely translation" by assuming that the nurse is female and the doctor is male. Right: the distribution of credit scores in the US depending on ethnicity. While credit scoring is an ethnicity-independent measurement, the difference between groups shows up as a result. Images from fairmlbook.org.
+</div>
 
+<p>In this situation, one needs to be concerned with the fairness of a neural network, i.e. whether it is relying on sensitive, law-protected information such as ethnicity or gender to undertake its decisions. One possible approach is to remove information about the sensitive attribute from the model’s internal representations. 
+These technique are commonly referred to as “fair representation learning”. 
+These methodologies learn a projection \(f: \mathcal{X} \to \mathcal{Z}\) into a latent space where it can be shown that the information about $s$ is minimal.</p>
 
+<p>However, one issue in the area of fair representation learning is interpretability. The projection into a latent space makes it hard to investigate <strong>why</strong> the decisions have been undertaken. This is in open contradiction with recent EU legislation, which calls for a right to an explanation for individuals which are subject to automatic decision systems (General Data Protection Regulation (GDPR), Recital 71).</p>
+
+<p>In this context, DNNs that are <strong>fair</strong> might still not be <strong>transparent</strong> enough to be applied in real-world scenarios.</p>
+
+<p>Our current proposal is to employ a custom neural architecture which performs <strong>feature corrections</strong> for fairness.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        <img style="text-align:center" class="img-fluid rounded z-depth-1" src="/assets/img/sellme.svg" alt="" title="example image" />
+    </div>
+</div>
+<div class="caption">
+    Instead of projecting into latent space, a possible interpretable architecture maps back onto feature space by learning a correction vector which matches in size with X. This model was trained on a US dataset dealing with law school admissions. Underpriviledged groups get a small boost to their average LSAT score so that admissions may be balanced between groups.
+</div>
+
+<p>If you are interested in working in this topic, I have several possible avenues of research starting from this idea.</p>
+
+<ul>
+  <li>Extending the architecture so that it may handle categorical and ordinal features naturally.</li>
+  <li>Limit the maximum amount of correction for each feature as a parameter which can be chosen by the user.</li>
+  <li>Investigate the connections to the counterfactual fairness literature.</li>
+</ul>
+
+<p>Some of the skills you will develop and knowledge you will gain by working on this topic:</p>
+
+<ul>
+  <li>Tensorflow/Pytorch fundamentals</li>
+  <li>Experimental tracking</li>
+  <li>Neural architectures for domain adaptation and fairness</li>
+</ul>
+
+<p>Please contact me via email if interested: <strong>mcerrato at uni dash mainz dot de</strong>.</p>
+
+  </article>
 
 </div>
 
