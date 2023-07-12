@@ -65,8 +65,8 @@
               <!-- Other pages -->
               {%- assign sorted_pages = site.pages | sort: "nav_order" -%}
               {%- for p in sorted_pages -%}
-		{%- if p.title contains "Fairness" -%}
-		{%- else -%}
+	      {%- if p.title contains "Fairness" -%}
+	      {%- else -%}
               {%- if p.nav and p.autogen == nil -%}
               {%- if p.dropdown %}
               <li class="nav-item dropdown {% if page.title == p.title %}active{% endif %}">
@@ -102,15 +102,7 @@
               <!-- Toogle theme mode -->
               <li class="toggle-container">
                 <button id="light-toggle" title="Change theme">
-=======
-          <!-- Other pages -->
-          {% assign sorted_pages = site.pages | sort: "title" %}
-          {% for p in sorted_pages %}
-          {% if p.title contains "Fairness" %} <!-- skip class in header -->
-          {% else %}
-          {% if p.nav and p.autogen == nil %}
->>>>>>> e0c106a (aaa)
-                  <i class="fas fa-moon"></i>
+                 <i class="fas fa-moon"></i>
                   <i class="fas fa-sun"></i>
                 </button>
               </li>
