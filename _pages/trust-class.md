@@ -8,7 +8,7 @@ nav: true
 
 Machine Learning models, especially based on neural networks, are now part of our everyday life, being deployed in smartphones and embedded systems. Computer Vision algorithms recognize our pets in the photos we take; Natural Language Processing models are able to fix our grammar and even generate human-passing text. 
 
-While the new wave of so-called "deep learning" systems displays impressive performance in various tasks, these models are very hard to understand in various ways. To cite one issue among others, the GPT family of models employs 175 billion learnable parameters. When something goes wrong, it is almost impossible to understand "why" a model has made a particular decision.
+While this new wave of so-called "deep learning" systems displays impressive performance in various tasks, these models are very hard to understand in various ways. To cite one issue among others, the GPT family of models employs 175 billion learnable parameters. When something goes wrong, it is almost impossible to understand "why" a model has made a particular decision.
 
 The technical optimism and excitement around Machine Learning has also pushed businesses to apply it in situations where it may impact people's well-being directly, such as loan applications, candidate selection for job offers and evaluating the chance of re-offending for people who commited crimes. Computer vision applications based on neural networks have even been employed to judge beauty contests.
 
